@@ -22,6 +22,7 @@ class MegaRandom extends Component {
         this.setState({
             value: value
         });
+        this.props.handler(value);
     }
 
     // this is never used

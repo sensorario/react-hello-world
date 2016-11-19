@@ -4,6 +4,11 @@ import MegaRandom from './MegaRandom'
 import './App.css';
 
 class App extends Component {
+
+    onSomeEvent = (e) => {
+        console.log('something happens ' + e);
+    }
+
     render() {
         return (
             <div className="App">
@@ -13,15 +18,18 @@ class App extends Component {
                 <MegaRandom
                     value="42"
                     range="9000"
-                    interval="1000"
+                    interval="750"
+                    handler={this.onSomeEvent}
                 />
                 <MegaRandom
                     value="666"
                     range="10"
                     interval="500"
+                    handler={this.onSomeEvent}
                 />
             </div>
         );
+
     }
 }
 
