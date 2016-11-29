@@ -3,6 +3,31 @@ import logo from './logo.svg';
 import MegaRandom from './MegaRandom'
 import './App.css';
 
+class Title extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0
+        };
+    }
+
+    handleClick (event) {
+        console.log(this.state.counter);
+
+        this.setState((prevState, props) => ({
+            counter: prevState.counter + 1
+        }));
+    }
+
+    render() {
+        return (
+            <h1 onClick={(event) => {this.handleClick(event)}}>Title</h1>
+        );
+    }
+
+}
+
 class App extends Component {
 
     onSomeEvent = (e) => {
@@ -15,12 +40,13 @@ class App extends Component {
                 <div className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                 </div>
-                <MegaRandom
-                    value="42"
-                    range="9000"
-                    interval="750"
-                    handler={this.onSomeEvent}
-                />
+                <Title value="42" />
+                <MegaRandom handler={this.onSomeEvent} />
+                <MegaRandom handler={this.onSomeEvent} />
+                <MegaRandom handler={this.onSomeEvent} />
+                <MegaRandom handler={this.onSomeEvent} />
+                <MegaRandom handler={this.onSomeEvent} />
+                <MegaRandom handler={this.onSomeEvent} />
                 <MegaRandom
                     value="666"
                     range="10"
@@ -31,6 +57,7 @@ class App extends Component {
         );
 
     }
+
 }
 
 export default App;
