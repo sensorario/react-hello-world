@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import MegaRandom from './MegaRandom'
+import ListKeysComponent from './ListKeysComponent'
 import './App.css';
 
 class Title extends Component {
@@ -31,7 +32,7 @@ class Title extends Component {
 class App extends Component {
 
     onSomeEvent = (e) => {
-        console.log('something happens ' + e);
+        //console.log('something happens ' + e);
     }
 
     render() {
@@ -41,6 +42,7 @@ class App extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                 </div>
                 <Title value="42" />
+                <ListKeysComponent />
                 <MegaRandom handler={this.onSomeEvent} />
                 <MegaRandom handler={this.onSomeEvent} />
                 <MegaRandom handler={this.onSomeEvent} />
